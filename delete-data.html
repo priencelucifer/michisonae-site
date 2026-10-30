@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delete your MichiSonae data</title>
+<meta name="description" content="How to delete the data the MichiSonae Android app keeps, and what is kept afterwards.">
+<style>
+:root { --ink: #1d2b2f; --muted: #52646a; --line: #d5e2e4; --accent: #126f79; --bg: #fbfdfd; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e4eeef; --muted: #a6b8bc; --line: #2f4347; --accent: #6cc3cc; --bg: #121b1d; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 8px; }
+h2 { font-size: 1.25rem; margin: 32px 0 8px; padding-top: 12px; border-top: 1px solid var(--line); }
+a { color: var(--accent); }
+li { margin: 6px 0; }
+.lead { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+<h1>Delete your MichiSonae data</h1>
+<p class="lead">MichiSonae, the Android app by Ricky Kashyap, has no accounts. Almost everything it keeps is on your phone, and you can delete it yourself at any time.</p>
+
+<h2>Delete everything from the app</h2>
+<ol>
+<li>Open MichiSonae.</li>
+<li>Go to <strong>Settings</strong>.</li>
+<li>Tap <strong>Delete all local data</strong> and confirm.</li>
+</ol>
+<p>This removes everything the app stores on the phone: your vehicle profile, ride summaries, fuel and battery history, the parked spot, saved hazard data and offline maps, reports and answers waiting to upload, error reports and settings. It also asks the server to revoke the phone's anonymous credentials, so nothing new can be linked to that installation. Uninstalling the app also removes everything on the phone.</p>
+
+<h2>What the server keeps afterwards</h2>
+<p>The server never had your name, email or phone number. After you delete your data, what it already received is removed on this schedule:</p>
+<ul>
+<li><strong>Road hazard reports</strong> (location, speed, direction and hazard type, with an anonymous installation ID): deleted 90 days after they were made. The newest report from an installation that supports a published hazard is kept while that hazard is still published.</li>
+<li><strong>"Still there / Not there" answers</strong>: deleted 30 days after they were given.</li>
+<li><strong>Anonymous credentials</strong>: revoked when you delete your data; stored only as hashes.</li>
+<li><strong>Error reports</strong> (only if you turned on "Send error reports"): kept in the server's operations log, which holds about the last 100 MB and overwrites older entries.</li>
+<li><strong>Security records</strong>: keyed one-way hashes of network addresses and anonymous installation IDs in rate-limit counters and audit records, used only to block abuse. They are not yet deleted on a schedule.</li>
+<li><strong>Backups</strong>: daily database backups are kept for about two weeks, so deleted records can remain in a backup for that long.</li>
+</ul>
+
+<h2>Ask us</h2>
+<p>For questions or other deletion requests, email <a href="mailto:rickykashyapbng4@gmail.com">rickykashyapbng4@gmail.com</a>. Because reports are anonymous, include the approximate time and place of any report you want removed. See the full <a href="privacy.html">privacy policy</a>.</p>
+</main>
+</body>
+</html>
